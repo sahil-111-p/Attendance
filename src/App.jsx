@@ -8,11 +8,11 @@ import { LoginPage } from "./components/LoginPage";
 const App = () => {
   return (
     <>
-      <LoginPage />
-      {/* <div className="navbar w-screen h-[110px] flex justify-center items-end p-[16px] border-slate-200 border-b-[1px]">
+      {/* <LoginPage /> */}
+      <div className="navbar w-full h-[110px] flex justify-center items-end p-[16px] border-slate-200 border-b-[1px]">
         <img src="/src/assets/logo.svg" alt="atharva logo" />
       </div>
-      <div className=" px-[20px] py-[20px] flex flex-col gap-[30px] mb-3">
+      <div className=" px-[20px] py-[20px] flex flex-col gap-[30px] mb-[12px]">
         <p className="font-bold text-[32px]">Welcome</p>
         <Card />
         <div className="flex flex-col gap-[10px]">
@@ -20,7 +20,7 @@ const App = () => {
           <Previous />
           <Previous />
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
