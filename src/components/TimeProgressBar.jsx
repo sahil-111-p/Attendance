@@ -79,9 +79,9 @@ const TimeProgressBar = () => {
         >
           Reset
         </button>
-      </div> */}
+      </div>
 
-      {/* {checkInTime && (
+      {checkInTime && (
         <p className="mt-2 text-sm">
           ✅ Checked in at: {checkInTime.toLocaleTimeString()}
         </p>

@@ -1,7 +1,12 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+    const navigate = useNavigate();
+    const hidden = () => {
+        navigate('/Teacherinfo')
+    }
     return (
         <div className="flex flex-col w-full h-[100dvh]">
             <div className="navbar w-screen h-[110px] flex justify-center items-end p-[16px] ">
@@ -16,8 +21,8 @@ export const LoginPage = () => {
                 <div className="flex flex-col gap-[32px]">
                     <button
                         className="flex justify-center items-center gap-[10px] border border-[#EFF0F6] rounded-[10px] w-full h-[48px]  shadow-[0px_4px_4px_0px_#00000040] ;
-          ">
-                        <div className="flex w-max gap-[10px] h-min">
+                    ">
+                        <div onClick={hidden} className="flex w-max gap-[10px] h-min">
                             <img className="h-[18px] w-[18px] my-[2px]" src="src/assets/google.png" alt="google" />
                             <p className="text-[14px] text-[#1A1C1E] font-semibold">Continue with Google</p>
                         </div>
