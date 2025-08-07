@@ -33,7 +33,7 @@ const LoginPage_G = () => {
                             </button>
                             <button
                                 onClick={hidden}
-                                className="text-center bg-[#1D61E7] rounded-[10px] w-full h-[48px]  shadow-[0px_4px_4px_0px_#00000040] hidden sm:block
+                                className="text-center bg-[#1D61E7] rounded-[10px] w-full h-[48px]  shadow-[0px_4px_4px_0px_#00000040] active:shadow-[0px_2px_1px_0px_#00000040] transition-all duration-100 hidden sm:block
                             ">
                                 <p className="text-[14px] text-white font-semibold">Sign Up</p>
                             </button>
