@@ -82,7 +82,7 @@ const Qrcode = () => {
             </div>
             <div id="qr-reader" className="w-[350px] h-[580px] rounded-[16px] p-0 m-0 overflow-hidden" />
           {/* <p className="mt-4 text-gray-700">Scanned Data: {data}</p> */}
-            <button onClick={hidden1} className='flex justify-center items-center rounded-lg text-sm font-medium gap-3 bg-[#1D61E7] text-white w-[350px] h-[48px] shadow-[0px_4px_4px_0px_#00000040] '>Done<img src="/src/assets/check.png" className='h-[15px] invert-100' alt="" /></button>
+            <button onClick={hidden1} className='flex justify-center items-center rounded-lg text-sm font-medium gap-3 bg-[#1D61E7] text-white w-[350px] h-[48px] shadow-[0px_4px_4px_0px_#00000040] active:shadow-[0px_2px_1px_0px_#00000040] transition-all duration-100 '>Done<img src="/src/assets/check.png" className='h-[15px] invert-100' alt="" /></button>
         </div>
         // </motion.div>
     );

@@ -22,7 +22,7 @@ const Dashboad = () => {
       <div className=" px-[20px] py-[20px] flex flex-col gap-[30px] mb-[12px]">
         <p className="font-bold text-[32px]">Welcome</p>
         <Card />
-        <button onClick={hidden} className="text-[14px] flex justify-center p-[10px] bg-[#1D61E7] transition-all duration-100 shadow-[0px_4px_4px_0px_#00000040] active:shadow-[0px_5px_10px_0px_#00000000]
+        <button onClick={hidden} className="text-[14px] flex justify-center p-[10px] bg-[#1D61E7] transition-all duration-100 shadow-[0px_4px_4px_0px_#00000040] active:shadow-[0px_2px_1px_0px_#00000040]
         rounded-[10px] gap-[8px] text-white">
         <img src="/src/assets/QR_logo.svg" alt="Profile" />
         <p>Scan QR</p>

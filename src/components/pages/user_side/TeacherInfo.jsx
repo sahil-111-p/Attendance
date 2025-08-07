@@ -26,7 +26,7 @@ const TeacherInfo = () => {
             </div>
             <div className="qr flex flex-col justify-center items-center gap-[8px]">
                 <span className='text-xs text-gray-600'>Scan QR to mark attendance</span>
-                <button onClick={hidden} className='flex justify-center items-center rounded-lg text-sm font-medium gap-3 bg-[#1D61E7] text-white w-[350px] h-[48px] shadow-[0px_4px_4px_0px_#00000040] 
+                <button onClick={hidden} className='flex justify-center items-center rounded-lg text-sm font-medium gap-3 bg-[#1D61E7] text-white w-[350px] h-[48px] shadow-[0px_4px_4px_0px_#00000040] active:shadow-[0px_2px_1px_0px_#00000040] transition-all duration-100 
 '> Scan QR <img src="/src/assets/Vector.png" className='h-[20px]' alt="" /></button>
                 <button className='flex justify-center items-center rounded-lg text-sm font-medium border-[1px] border-slate-200 w-[350px] h-[48px]'>View Previous Attendance</button>
             </div>
