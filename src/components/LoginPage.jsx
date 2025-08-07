@@ -12,10 +12,10 @@ export const LoginPage = () => {
                     Sign in to your Account
                     <p className="text-[16px] text-[#404142] font-semibold tracking-normal">Staff Login</p>
                 </h1>
-                <img src="src/assets/login.svg" alt="" />
+                <img className="h-[304px]" src="src/assets/login.svg" alt="" />
                 <div className="flex flex-col gap-[32px]">
                     <button
-                        className="flex justify-center items-center gap-[10px] border border-[#EFF0F6] rounded-[10px] w-full h-[48px] shadow-[0px_4px_4px_0px_#00000040] ;
+                        className="flex justify-center items-center gap-[10px] border border-[#EFF0F6] rounded-[10px] w-full h-[48px]  shadow-[0px_4px_4px_0px_#00000040] ;
           ">
                         <div className="flex w-max gap-[10px] h-min">
                             <img className="h-[18px] w-[18px] my-[2px]" src="src/assets/google.png" alt="google" />
