@@ -10,12 +10,20 @@ import Logout from "./components/pages/user_side/LogoutPage";
 import Dashboad from "./components/pages/user_side/Dashboad";
 import { LoginPage } from "./components/pages/user_side/LoginPage";
 import LoginPage_G from "./components/pages/Guard_side/LoginPage_G";
+import CardLayout from "./components/pages/Admin_side/CardLayout";
+import DateSelector from "./components/pages/Admin_side/DateSelector";
+import Card from "./components/pages/user_side/Card";
 
 function App() {
     const location = useLocation();
     return (
         <>
-        <LoginPage_G/>
+        {/* <CardLayout/> */}
+        {/* <DateSelector/> */}
+        {/* <Card/> */}
+        {/* <LoginPage_G/> */}
+        {/* <TeacherInfo /> */}
+        {/* <Qrcode/> */}
             {/* <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<LoginPage />} />
