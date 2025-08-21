@@ -2,7 +2,7 @@ import React from 'react'
 import { QRCodeSVG } from 'qrcode.react';
 
 
-const QrGenerate_G = () => {
+const QrGenerator_G = () => {
     const qrValue = 'https://www.csiace.com/';
     return (
         <div>
@@ -37,4 +37,4 @@ const QrGenerate_G = () => {
     )
 }
 
-export default QrGenerate_G
+export default QrGenerator_G
