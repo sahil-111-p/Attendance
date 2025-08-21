@@ -10,33 +10,27 @@ import Logout from "./components/pages/user_side/LogoutPage";
 import Dashboad from "./components/pages/user_side/Dashboad";
 import { LoginPage } from "./components/pages/user_side/LoginPage";
 import LoginPage_G from "./components/pages/Guard_side/LoginPage_G";
-import CardLayout from "./components/pages/Admin_side/CardLayout";
-import DateSelector from "./components/pages/Admin_side/DateSelector";
-import Card from "./components/pages/user_side/Card";
-import QrGenerate_G from "./components/pages/Guard_side/QRGenrator_G";
+import QrGenerate from "./components/pages/Guard_side/QrGenerate";
+// import { QRCodeSVG } from 'qrcode.react';
 
 function App() {
     const location = useLocation();
     return (
         <>
-        <QrGenerate_G/>
-        {/* <CardLayout/> */}
-        {/* <DateSelector/> */}
-        {/* <Card/> */}
-        {/* <LoginPage_G/> */}
-        {/* <TeacherInfo /> */}
-        {/* <Qrcode/> */}
-            {/* <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
-                    <Route path="/" element={<LoginPage />} />
+                    {/* <Route path="/" element={<LoginPage />} />
                     <Route path="/Teacherinfo" element={<TeacherInfo />} />
                     <Route path="/scanQR" element={<Qrcode />} />
                     <Route path="/" element={<TeacherInfo />} />
                     <Route path="/Complete" element={<AnimationPage />} />
                     <Route path="/ShowLogOut" element={<Logout />} />
-                    <Route path="/Dashboard" element={<Dashboad />} />
+                    <Route path="/Dashboard" element={<Dashboad />} /> */}
+                    {/* <Route path="/" element={<LoginPage_G/>} />
+                    <Route path="/GenerateQr" element={<QrGenerate/>} /> */}
                 </Routes>
-            </AnimatePresence> */}
+            </AnimatePresence>
+            
         </>
     );
 }
