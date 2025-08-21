@@ -5,11 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 const LoginPage_G = () => {
     const navigate = useNavigate();
     const hidden = () => {
-<<<<<<< HEAD
-        navigate("/GenerateQr");
-=======
         navigate("/");
->>>>>>> c60ad5ad339cbeffe18f84af1b8958915ec3ac1e
     };
     return (
         <>
