@@ -13,11 +13,13 @@ import LoginPage_G from "./components/pages/Guard_side/LoginPage_G";
 import CardLayout from "./components/pages/Admin_side/CardLayout";
 import DateSelector from "./components/pages/Admin_side/DateSelector";
 import Card from "./components/pages/user_side/Card";
+import QrGenerate_G from "./components/pages/Guard_side/QRGenrator_G";
 
 function App() {
     const location = useLocation();
     return (
         <>
+        <QrGenerate_G/>
         {/* <CardLayout/> */}
         {/* <DateSelector/> */}
         {/* <Card/> */}
