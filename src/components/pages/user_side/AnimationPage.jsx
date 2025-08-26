@@ -1,103 +1,165 @@
-import React from 'react'
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const AnimationPage = () => {
-    const navigate = useNavigate();
-    const hidden3 = () => {
-        navigate('/Dashboard')
-    } 
-    const [step, setStep] = useState("logoOnly");
-    useEffect(() => {
-            const timer = setTimeout(() => {
-            setStep("logoAndText");
-      }, 1000); // 3 seconds
-        return () => clearTimeout(timer);
-        }, []);
-    return (
-    <div>
-        <div className="w-full h-screen flex justify-center relative overflow-hidden">
-        <AnimatePresence>
-            {step === "logoOnly" && (
-            <motion.div
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1 }}
-            // transition={{ duration: 2 }}
-            className="absolute top-[65px] h-[98px]"
-            key="logo"
-            >
-            <div className="marked flex flex-col justify-center items-center h-screen gap-[25px]">
-            <img className='h-[156px] w-[152px]' src="/src/assets/Checkmark.png" alt="" />
-            <span className='font-semibold text-[30px]'>Attendance Marked</span>
-            </div>
-            </motion.div>
-        )}
-            {step === "logoAndText" && (
-            <div className="w-full h-full relative flex flex-col items-center">
-            <motion.div
-            className="h-[98px] w-[95px] absolute p-[15px]"
-            initial={{ top: "50%", left: "50%", x: "-50%", y: "-50%", scale: 2.2}}
-            animate={{ top: "80px", left: "50%", x: "-50%", y: "0%", scale:1.4 }}
-            transition={{ duration: 1.5 }}
-            >
-                <img src="/src/assets/Checkmark.png" alt="" />
-                <div className='font-semibold text-[16px] w-[350px] absolute left-[-25px] top-[88px]'>Attendance Marked</div>
-            </motion.div>
-            <motion.div
-            className="markedD flex flex-col items-center pt-[180px]" 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.8}}
-            >
-            <div className="marked flex flex-col justify-center items-center h-[100px] w-[350px] gap-[10px]">
-                <div className="text flex flex-col justify-center items-center">
-                <span className='text-gray-400'>Your entry has been marked</span>
-            </div>
-            </div>
+  const navigate = useNavigate();
+  const hidden3 = () => {
+    navigate("/Dashboard");
+  };
 
-        <div className="detail h-[450px] w-[350px] flex flex-col gap-[15px]">
-        <span className='font-semibold'>Details:</span>
-        <div className="info flex flex-col justify-center items-center h-[410px] border-slate-300 border-[1px] rounded-2xl">
-            <div className="info1 h-[64px] w-[310px] flex flex-col gap-[12px]">
-            <span className='text-sm font-semibold '>Name</span>
-            <span className='text-xs text-gray-500'>John Smith</span>
-            </div>
-            <div className="info1 h-[64px] w-[310px] flex flex-col gap-[12px]">
-            <span className='text-sm font-semibold '>Employee ID</span>
-            <span className='text-xs text-gray-500'>EMP0234</span>
-            </div>
-            <div className="info1 h-[64px] w-[310px] flex flex-col gap-[12px]">
-            <span className='text-sm font-semibold '>Department</span>
-            <span className='text-xs text-gray-500'>EXTC</span>
-            </div>
-            <div className="info1 h-[64px] w-[310px] flex flex-col gap-[12px]">
-            <span className='text-sm font-semibold '>Date</span>
-            <span className='text-xs text-gray-500'>05/07/2025</span>
-            </div>
-            <div className="info1 h-[64px] w-[310px] flex justify-between">
-            <div className="checkIn flex flex-col gap-[12px]">
-                <span className='text-sm font-semibold '>Check-in time</span>
-                <span className='text-xs text-gray-500'>08:45</span>
-            </div>
-            <div className="checkOut flex flex-col gap-[12px]">
-                <span className='text-sm font-semibold '>Check-out time</span>
-                <span className='text-xs text-gray-500'>--</span>
-            </div>
-            </div>
-        </div>
-        <button onClick={hidden3} className='flex justify-center items-center mt-[20px] rounded-lg text-sm gap-3 bg-[#1D61E7] text-white w-[350px] h-[48px] shadow-[0px_4px_4px_0px_#00000040] '>
-            Go to Dashboard
-        </button>
-        </div>
-        </motion.div>
-        </div>
-        )}
+  const [step, setStep] = useState("logoOnly");
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStep("logoAndText");
+    }, 1200); // delay for smoother effect
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="h-[100dvh] bg-white">
+      <div className="w-full h-full flex justify-center relative overflow-hidden">
+        <AnimatePresence mode="wait">
+          {/* LOGO STEP */}
+          {(step === "logoOnly" || step === "logoAndText") && (
+            <motion.div
+              key="logo"
+              className="absolute flex flex-col items-center justify-center h-screen"
+              initial={{ scale: 0, y: 0, opacity: 0 }}
+              animate={{
+                scale: step === "logoOnly" ? 1 : 0.7,
+                y: step === "logoOnly" ? 0 : -260, // smooth upward movement
+                opacity: 1, // never fades out
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 90,
+                damping: 18,
+              }}
+            >
+              {/* Logo Image */}
+              <motion.img
+                src="/src/assets/Checkmark.png"
+                alt="Checkmark"
+                className="h-[156px] w-[152px]"
+                transition={{
+                  type: "spring",
+                  stiffness: 150,
+                  damping: 15,
+                }}
+              />
+
+              {/* Logo Title */}
+              <motion.span
+                className="font-semibold text-[30px] mt-4"
+                initial={{ opacity: 1, y: 20 }}
+                animate={{
+                //   opacity: step === "logoOnly" ? 1 : 0, // fades out as we move to details
+                scale: step === "logoOnly" ? 1 : 1.3,                  
+                y: step === "logoOnly" ? 0 : 10,
+                }}
+                transition={{ duration: 0.6 }}
+              >
+                Attendance Marked
+              </motion.span>
+            </motion.div>
+          )}
+
+          {/* DETAILS & DASHBOARD BUTTON */}
+          {step === "logoAndText" && (
+            <motion.div
+              className="w-full h-full relative flex flex-col pb-[22px] items-center justify-end"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.7 }}
+            >
+              {/* FADE-IN DETAILS */}
+              <motion.div
+                className="markedD flex flex-col items-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 1,
+                  duration: 0.7,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+              >
+                <div className="marked flex flex-col justify-center items-center h-[100px] w-[350px] gap-[10px]">
+                  <div className="text flex flex-col justify-center items-center">
+                    <span className="text-gray-400">
+                      Your entry has been marked
+                    </span>
+                  </div>
+                </div>
+
+                {/* DETAILS CARD */}
+                <motion.div
+                  className="detail h-[450px] w-[350px] flex flex-col gap-[5px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.3, duration: 0.6 }}
+                >
+                  <span className="font-semibold">Details:</span>
+                  <div className="info flex flex-col justify-center items-center h-[410px] border-slate-300 border-[1px] rounded-2xl shadow-md bg-white">
+                    {[
+                      ["Name", "John Smith"],
+                      ["Employee ID", "EMP0234"],
+                      ["Department", "EXTC"],
+                      ["Date", "05/07/2025"],
+                    ].map(([label, value], i) => (
+                      <motion.div
+                        key={i}
+                        className="info1 h-[64px] w-[310px] flex flex-col gap-[12px]"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.5 + i * 0.1 }}
+                      >
+                        <span className="text-sm font-semibold">{label}</span>
+                        <span className="text-xs text-gray-500">{value}</span>
+                      </motion.div>
+                    ))}
+
+                    {/* Check-in & Check-out */}
+                    <motion.div
+                      className="info1 h-[64px] w-[310px] flex justify-between"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.9 }}
+                    >
+                      <div className="checkIn flex flex-col gap-[12px]">
+                        <span className="text-sm font-semibold">
+                          Check-in time
+                        </span>
+                        <span className="text-xs text-gray-500">08:45</span>
+                      </div>
+                      <div className="checkOut flex flex-col gap-[12px]">
+                        <span className="text-sm font-semibold">
+                          Check-out time
+                        </span>
+                        <span className="text-xs text-gray-500">--</span>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* BUTTON */}
+                  <motion.button
+                    onClick={hidden3}
+                    className="flex justify-center items-center mt-[20px] rounded-lg text-sm gap-3 bg-[#1D61E7] text-white w-[350px] h-[48px] shadow-[0px_4px_4px_0px_#00000040]"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                  >
+                    Go to Dashboard
+                  </motion.button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
         </AnimatePresence>
+      </div>
     </div>
-    </div>
-    )
-}
+  );
+};
 
-export default AnimationPage
+export default AnimationPage;
